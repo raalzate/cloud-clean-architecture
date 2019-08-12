@@ -1,0 +1,6 @@
+rootProject.name = 'cloud-clean-architecture'
+include 'domain'
+include 'usecase'
+include 'service'
+include 'spring-boot'
+
