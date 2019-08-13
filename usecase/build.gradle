@@ -1,8 +1,0 @@
-plugins {
-    id 'java'
-}
-
-dependencies {
-    compile 'org.apache.pdfbox:pdfbox:2.0.16'
-    compileOnly 'org.apache.pdfbox:preflight:2.0.16'
-}

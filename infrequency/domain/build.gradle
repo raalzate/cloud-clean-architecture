@@ -1,0 +1,35 @@
+import com.amazonaws.auth.profile.ProfileCredentialsProvider
+
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+ext {
+    awsCredentials = new ProfileCredentialsProvider().credentials
+}
+
+
+dependencies {
+    compile 'javax.persistence:javax.persistence-api:2.2'
+}
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            url "s3://techandsolve.com/releases"
+            credentials(AwsCredentials) {
+                accessKey awsCredentials.AWSAccessKeyId
+                secretKey awsCredentials.AWSSecretKey
+            }
+        }
+    }
+}

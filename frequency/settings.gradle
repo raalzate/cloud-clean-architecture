@@ -1,0 +1,3 @@
+rootProject.name = 'cca-fraquency'
+include 'usecase'
+
