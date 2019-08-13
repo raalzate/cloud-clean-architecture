@@ -1,0 +1,3 @@
+rootProject.name = 'cca-governorate'
+include 'spring-boot'
+include 'artifact-repo'
