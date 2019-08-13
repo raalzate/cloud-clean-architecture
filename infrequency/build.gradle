@@ -42,10 +42,5 @@ subprojects {
     }
 }
 
-project(':spring-boot') {
-    dependencies {
-        compile 'com.techandsolve:service:1.0'
-    }
-}
 
 

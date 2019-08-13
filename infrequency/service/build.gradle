@@ -17,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    compileOnly 'com.techandsolve:usecase:1.0'
     compile 'org.mapstruct:mapstruct:1.3.0.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.3.0.Final'
     testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.3.0.Final'

@@ -1,4 +1,4 @@
-rootProject.name = 'cca-governorate'
+rootProject.name = 'cca-infrequency'
 include 'service'
 include 'domain'
 include 'spring-boot'
