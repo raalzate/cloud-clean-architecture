@@ -30,7 +30,8 @@ ext {
 }
 
 dependencies {
-    compileOnly 'com.techandsolve:service:1.0'
+    compile 'com.techandsolve:service:1.0'
+
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
     compile 'org.springframework.boot:spring-boot-starter'
     compile 'org.springframework.boot:spring-boot-starter-web'

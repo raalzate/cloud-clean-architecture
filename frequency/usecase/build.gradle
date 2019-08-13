@@ -10,9 +10,9 @@ ext {
 }
 
 dependencies {
-    compile 'com.techandsolve:domain:1.0'
-    compile 'org.apache.pdfbox:pdfbox:2.0.16'
+    compileOnly 'com.techandsolve:domain:1.0'
     compileOnly 'org.apache.pdfbox:preflight:2.0.16'
+    compile 'org.apache.pdfbox:pdfbox:2.0.16'
 }
 
 publishing {
