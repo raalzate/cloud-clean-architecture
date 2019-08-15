@@ -1,13 +1,6 @@
-import com.amazonaws.auth.profile.ProfileCredentialsProvider
-
 plugins {
     id 'java'
-    id 'maven-publish'
     id 'net.ltgt.apt' version '0.15'
-}
-
-ext {
-    awsCredentials = new ProfileCredentialsProvider().credentials
 }
 
 apply plugin: 'net.ltgt.apt-idea'
@@ -17,26 +10,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'com.techandsolve:usecase:1.0'
     compile 'org.mapstruct:mapstruct:1.3.0.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.3.0.Final'
     testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.3.0.Final'
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-
-    repositories {
-        maven {
-            url "s3://techandsolve.com/releases"
-            credentials(AwsCredentials) {
-                accessKey awsCredentials.AWSAccessKeyId
-                secretKey awsCredentials.AWSSecretKey
-            }
-        }
-    }
 }

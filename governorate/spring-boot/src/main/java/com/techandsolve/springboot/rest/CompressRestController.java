@@ -30,4 +30,5 @@ public class CompressRestController {
     public Mono<List<DocumentFormat>> all() {
         return Mono.fromFuture(compressService.getAll());
     }
+
 }

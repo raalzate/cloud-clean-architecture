@@ -18,14 +18,11 @@ ext {
 allprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
+    apply plugin: 'maven-publish'
     group = 'com.techandsolve'
-    version = '1.0'
+    version = 'latest'
     sourceCompatibility = 1.8
 }
-
-group 'techandsolve.com'
-version '1.0-SNAPSHOT'
-sourceCompatibility = 1.8
 
 
 subprojects {
@@ -42,4 +39,29 @@ subprojects {
     }
 }
 
+
+project(":spring-boot"){
+    dependencies {
+        compile 'com.techandsolve:service:latest'
+        compile 'com.techandsolve:usecase:latest'
+        compile 'com.techandsolve:domain:latest'
+    }
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+
+        repositories {
+            maven {
+                url "s3://techandsolve.com/releases"
+                credentials(AwsCredentials) {
+                    accessKey awsCredentials.AWSAccessKeyId
+                    secretKey awsCredentials.AWSSecretKey
+                }
+            }
+        }
+    }
+}
 

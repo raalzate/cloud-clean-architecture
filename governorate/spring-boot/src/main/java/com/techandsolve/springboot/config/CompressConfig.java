@@ -15,7 +15,7 @@ public class CompressConfig {
     private DocumentRepository documentRepository;
 
     @Bean
-    public CompressService configure() {
+    public CompressService compressService() {
         CompressPDFUseCase compressPDFUseCase = new CompressPDFUseCase(documentRepository);
         ListAllPDFUseCase listAllPDFUseCase = new ListAllPDFUseCase(documentRepository);
         return new CompressService(compressPDFUseCase, listAllPDFUseCase);

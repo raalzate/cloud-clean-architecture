@@ -1,34 +1,14 @@
-import com.amazonaws.auth.profile.ProfileCredentialsProvider
 
 plugins {
     id 'java'
-    id 'maven-publish'
 }
 
-ext {
-    awsCredentials = new ProfileCredentialsProvider().credentials
-}
+
 
 dependencies {
-    compileOnly 'com.techandsolve:domain:1.0'
     compileOnly 'org.apache.pdfbox:preflight:2.0.16'
     compile 'org.apache.pdfbox:pdfbox:2.0.16'
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
 
-    repositories {
-        maven {
-            url "s3://techandsolve.com/releases"
-            credentials(AwsCredentials) {
-                accessKey awsCredentials.AWSAccessKeyId
-                secretKey awsCredentials.AWSSecretKey
-            }
-        }
-    }
-}
+
