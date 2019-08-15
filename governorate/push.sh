@@ -2,6 +2,7 @@ export COMPONENT_NAME=cca-spring-boot
 export URL_REPO=906739970468.dkr.ecr.us-east-2.amazonaws.com
 
 echo "Building object [$COMPONENT_NAME]..."
+./refresh-dependencies.sh
 ./gradlew :spring-boot:build build
  
 echo "Building image [$COMPONENT_NAME]..."
