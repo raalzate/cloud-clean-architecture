@@ -1,0 +1,15 @@
+{
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Principal": {
+         "AWS": "*"
+      },
+      "Resource": [
+        "arn:aws:s3:::techandsolve.com",
+        "arn:aws:s3:::techandsolve.com/*"
+      ]
+    }
+  ]
+}
